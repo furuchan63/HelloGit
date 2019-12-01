@@ -1,0 +1,15 @@
+<div class="main posts-index">
+  <div class="container">
+    <h2>投稿一覧</h2>
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <p><%= post.created_at %> </p>
+        <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}" )%>
+        </div>
+
+        <%= link_to(post.title, "/posts/#{post.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>
